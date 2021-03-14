@@ -51,10 +51,12 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="134dp"
                     android:layout_marginRight="134dp"
+                    android:layout_marginBottom="13dp"
                     android:textColor="@color/black"
+                    app:layout_constraintBottom_toTopOf="@+id/creators"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/genre"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/genre"
@@ -65,12 +67,14 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="34dp"
                     android:layout_marginRight="34dp"
+                    android:layout_marginBottom="13dp"
                     android:text="Drama, Sport"
-                    android:textSize="12sp"
-                    app:layout_constraintEnd_toStartOf="@+id/simpleRatingBar"
                     android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/creators"
+                    app:layout_constraintEnd_toStartOf="@+id/simpleRatingBar"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/authors"
