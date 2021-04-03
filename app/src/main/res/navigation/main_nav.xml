@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.movieapp.HomeFragment"
+        android:name="com.example.movieapp.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.movieapp.DetailFragment"
+        android:name="com.example.movieapp.fragments.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
         <argument
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/watchlistFragment"
-        android:name="com.example.movieapp.WatchlistFragment"
+        android:name="com.example.movieapp.fragments.WatchlistFragment"
         android:label="fragment_watchlist"
         tools:layout="@layout/fragment_watchlist" />
 </navigation>
