@@ -10,6 +10,4 @@ class HomeItemViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
     val movieTitle: TextView = itemView.findViewById(R.id.card_item_title)
     val movieDescription: TextView = itemView.findViewById(R.id.card_item_story)
     val seeDetailsBtn: Button = itemView.findViewById(R.id.card_item_seeDetails)
-    //actor
-    //descrpt
 }

@@ -14,7 +14,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeItemViewHolder>() {
     var data = listOf<Movie>()
         set(value){
             field = value
-            notifyDataSetChanged() //re render set data
+            notifyDataSetChanged()
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeItemViewHolder {
@@ -32,7 +32,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeItemViewHolder>() {
         holder.movieTitle.text = item.title
         holder.movieDescription.text = item.description
         holder.seeDetailsBtn.setOnClickListener { v: View -> v.findNavController().navigate(
-            HomeFragmentDirections.actionHomeFragmentToDetailFragment(item)) } //navigates too
+            HomeFragmentDirections.actionHomeFragmentToDetailFragment(item)) }
     }
 
 }

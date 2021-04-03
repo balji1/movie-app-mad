@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity(){
         val bind = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         val findNavController = this.findNavController(R.id.navHostFragment)
         drawerLayout = bind.drawerLayout
-        NavigationUI.setupActionBarWithNavController(this, findNavController, drawerLayout) //action bar oben
+        NavigationUI.setupActionBarWithNavController(this, findNavController, drawerLayout)
         NavigationUI.setupWithNavController(bind.navView, findNavController)
 
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(this.findNavController(R.id.navHostFragment), drawerLayout) //uses the button top left instead of the nav button from android
+        return NavigationUI.navigateUp(this.findNavController(R.id.navHostFragment), drawerLayout)
     }
 }
