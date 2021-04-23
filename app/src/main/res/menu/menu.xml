@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Watchlist"
-        android:id="@+id/watchlistFragment"/>
+<!--    Kein Binding weil die ID übereinstimmt-->
+    <item
+        android:id="@+id/watchlistFragment"
+        android:title="Watchlist" />
+    <item
+        android:id="@+id/quizFragment"
+        android:title="Quiz" />
 </menu>

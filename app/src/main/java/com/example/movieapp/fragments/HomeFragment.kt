@@ -18,12 +18,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val bind = DataBindingUtil.inflate<FragmentHomeBinding>(
-            inflater,
-            R.layout.fragment_home,
-            container,
-            false
-        )
+        val bind = DataBindingUtil.inflate<FragmentHomeBinding>(inflater, R.layout.fragment_home, container, false)
         val adapter = HomeAdapter()
         bind.movieList.adapter = adapter
         adapter.data = listOf(
