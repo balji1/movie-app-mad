@@ -6,21 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.movieapp.databinding.FragmentEndQuizBinding
 
 class EndQuizFragment : Fragment() {
 
+    private lateinit var quizEndViewModel: EndQuizViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val score = EndQuizFragmentArgs.fromBundle(requireArguments()).quizScore
-        val count = EndQuizFragmentArgs.fromBundle(requireArguments()).quizCount
+
         val binding:FragmentEndQuizBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_end_quiz, container, false)
-        binding.score = score
-        binding.count = count
+
+        quizEndViewModel =
+            ViewModelProvider(this).get(EndQuizViewModel::class.java) //Init Viewmodel with the current state
+
+        binding.quizEndViewModel = quizEndViewModel
+        quizEndViewModel.score.value = EndQuizFragmentArgs.fromBundle(requireArguments()).quizScore
+        quizEndViewModel.count.value = EndQuizFragmentArgs.fromBundle(requireArguments()).quizCount
+
         return binding.root
     }
 

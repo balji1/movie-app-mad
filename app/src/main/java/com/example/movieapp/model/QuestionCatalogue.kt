@@ -33,7 +33,7 @@ class QuestionCatalogue {
             list.add(Question(
                 "What’s the name of the anthemic dance near the beginning of The Rocky Horror Picture Show?",
                 listOf(
-                    Answer("Jolly Holiday,"),
+                    Answer("Jolly Holiday"),
                     Answer("Diamonds Are a Girl’s Best Friend"),
                     Answer("The Time of My Life"),
                     Answer("The Time Warp", true)
