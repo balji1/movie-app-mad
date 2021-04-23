@@ -45,5 +45,12 @@
         android:id="@+id/endQuizFragment"
         android:name="com.example.movieapp.EndQuizFragment"
         android:label="fragment_end_quiz"
-        tools:layout="@layout/fragment_end_quiz" />
+        tools:layout="@layout/fragment_end_quiz" >
+        <argument
+            android:name="quizScore"
+            app:argType="integer" />
+        <argument
+            android:name="quizCount"
+            app:argType="integer" />
+    </fragment>
 </navigation>

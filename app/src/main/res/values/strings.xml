@@ -3,4 +3,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="question_progress">Question %d/%d</string>
+    <string name="default_score">%d/%d</string>
 </resources>

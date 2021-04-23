@@ -44,4 +44,20 @@ class QuizViewModel : ViewModel() {
         _questions.value = QuestionCatalogue().defaultQuestions
         _currentQuestion.value = _questions.value!!.get(_index.value!!);
     }
+
+    fun incrementScore(){
+        _score.value = _score.value?.plus(1)
+    }
+
+    fun incrementIndex(){
+        _index.value = _index.value?.plus(1)
+    }
+
+    fun setNextQuestion(){
+        _currentQuestion.value = _questions.value!![_index.value!!]
+    }
+
+    fun setEndGame(value: Boolean){
+        _gameEnd.value = value
+    }
 }
