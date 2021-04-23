@@ -1,4 +1,4 @@
-package com.example.movieapp
+package com.example.movieapp.quiz.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentQuizBinding
+import com.example.movieapp.quiz.viewModels.QuizViewModel
 
 
 class QuizFragment : Fragment() {
@@ -23,7 +25,8 @@ class QuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_quiz, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_quiz, container, false)
 
 
         quizViewModel =
@@ -33,7 +36,12 @@ class QuizFragment : Fragment() {
 
         quizViewModel.gameEnd.observe(viewLifecycleOwner, Observer { newEndGame ->
             if (newEndGame) {
-                view?.findNavController()?.navigate(QuizFragmentDirections.actionQuizFragmentToEndQuizFragment(quizViewModel.score.value!!, quizViewModel.questions.value!!.size))
+                view?.findNavController()?.navigate(
+                    QuizFragmentDirections.actionQuizFragmentToEndQuizFragment(
+                        quizViewModel.score.value!!,
+                        quizViewModel.questions.value!!.size
+                    )
+                )
             }
         })
 

@@ -8,7 +8,7 @@
 
         <variable
             name="quizViewModel"
-            type="com.example.movieapp.QuizViewModel" />
+            type="com.example.movieapp.quiz.viewModels.QuizViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
-        tools:context=".QuizFragment">
+        tools:context=".quiz.fragments.QuizFragment">
 
         <TextView
             android:id="@+id/currentQuestionText"

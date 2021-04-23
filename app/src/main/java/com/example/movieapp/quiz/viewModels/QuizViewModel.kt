@@ -1,11 +1,11 @@
-package com.example.movieapp
+package com.example.movieapp.quiz.viewModels
 
 import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.movieapp.model.Question
-import com.example.movieapp.model.QuestionCatalogue
+import com.example.movieapp.quiz.model.Question
+import com.example.movieapp.quiz.model.QuestionCatalogue
 
 class QuizViewModel : ViewModel() {
     private val _questions = MutableLiveData<MutableList<Question>>()

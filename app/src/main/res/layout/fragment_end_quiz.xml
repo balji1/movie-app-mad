@@ -6,7 +6,7 @@
     <data>
         <variable
             name="quizEndViewModel"
-            type="com.example.movieapp.EndQuizViewModel" />
+            type="com.example.movieapp.quiz.viewModels.EndQuizViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
