@@ -15,12 +15,7 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val inflate = DataBindingUtil.inflate<FragmentDetailBinding>(
-            inflater,
-            R.layout.fragment_detail,
-            container,
-            false
-        )
+        val inflate = DataBindingUtil.inflate<FragmentDetailBinding>(inflater,R.layout.fragment_detail,container,false)
         inflate.movie = DetailFragmentArgs.fromBundle(requireArguments()).movie
         return inflate.root
     }

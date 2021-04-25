@@ -1,6 +1,5 @@
 package com.example.movieapp.quiz.viewModels
 
-import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,15 +27,6 @@ class QuizViewModel : ViewModel() {
     val gameEnd: LiveData<Boolean>
         get() = _gameEnd
 
-    private val _wrongInput = MutableLiveData<Boolean>()
-    val wrongInput: LiveData<Boolean>
-        get() = _wrongInput
-
-    private val _time = MutableLiveData<Long>()
-    val time: LiveData<Long>
-        get() = _time
-
-    lateinit var timer: CountDownTimer
 
     init {
         _score.value = 0;

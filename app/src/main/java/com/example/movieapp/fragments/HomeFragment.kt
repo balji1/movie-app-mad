@@ -19,18 +19,37 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val bind = DataBindingUtil.inflate<FragmentHomeBinding>(inflater, R.layout.fragment_home, container, false)
-        val adapter = HomeAdapter()
-        bind.movieList.adapter = adapter
-        adapter.data = listOf(
-            initMovie(),
-            initMovie(),
-            initMovie()
-        )
+        val homeAdapter = HomeAdapter()
+
+        bind.movieList.adapter = homeAdapter
+        homeAdapter.data = initMovieList()
+
         setHasOptionsMenu(true) //shows options menu
 
         return bind.root
     }
 
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController()) || super.onOptionsItemSelected(item)
+    }
+
+    private fun initMovieList(): List<Movie> {
+        return listOf(
+            initMovie(),
+            initMovie(),
+            initMovie(),
+            initMovie(),
+            initMovie(),
+            initMovie(),
+            initMovie()
+        )
+    }
     private fun initMovie(): Movie {
         val movie = Movie(
             "The Queens Gambit",
@@ -47,15 +66,5 @@ class HomeFragment : Fragment() {
                     "her drug and alcohol dependency becomes worse.\n"
         )
         return movie
-    }
-
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController()) || super.onOptionsItemSelected(item)
     }
 }

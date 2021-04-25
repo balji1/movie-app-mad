@@ -21,10 +21,7 @@ class EndQuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding: FragmentEndQuizBinding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_end_quiz, container, false
-        )
+        val binding: FragmentEndQuizBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_end_quiz, container, false)
 
         //Init view model with the current state
         quizEndViewModel = ViewModelProvider(this).get(EndQuizViewModel::class.java)
