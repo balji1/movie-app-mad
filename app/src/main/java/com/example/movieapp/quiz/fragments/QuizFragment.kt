@@ -57,11 +57,10 @@ class QuizFragment : Fragment() {
         //Move to next Question
         var answerId = binding.answerBox.checkedRadioButtonId //View ID from selected Radio button
         if (answerId == -1) {
-            Toast.makeText(activity, "Please select a answer", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Please select an answer", Toast.LENGTH_LONG).show()
             return
         }
-        val radioButton: View =
-            binding.answerBox.findViewById(answerId); //get the selected radio button
+        val radioButton: View = binding.answerBox.findViewById(answerId); //get the selected radio button
         val index = binding.answerBox.indexOfChild(radioButton) //Pos of selected radio button
 
         if (quizViewModel.currentQuestion.value!!.answers[index].isCorrectAnswer) {

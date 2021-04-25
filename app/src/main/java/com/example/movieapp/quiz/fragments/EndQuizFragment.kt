@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentEndQuizBinding
 import com.example.movieapp.quiz.viewModels.EndQuizViewModel
@@ -20,19 +21,20 @@ class EndQuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding:FragmentEndQuizBinding = DataBindingUtil.inflate(inflater,
-            R.layout.fragment_end_quiz, container, false)
+        val binding: FragmentEndQuizBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_end_quiz, container, false
+        )
 
-        quizEndViewModel =
-            ViewModelProvider(this).get(EndQuizViewModel::class.java) //Init Viewmodel with the current state
+        //Init view model with the current state
+        quizEndViewModel = ViewModelProvider(this).get(EndQuizViewModel::class.java)
 
         binding.quizEndViewModel = quizEndViewModel
-        quizEndViewModel.score.value = EndQuizFragmentArgs.fromBundle(
-            requireArguments()
-        ).quizScore
-        quizEndViewModel.count.value = EndQuizFragmentArgs.fromBundle(
-            requireArguments()
-        ).quizCount
+        quizEndViewModel.score.value = EndQuizFragmentArgs.fromBundle(requireArguments()).quizScore
+        quizEndViewModel.count.value = EndQuizFragmentArgs.fromBundle(requireArguments()).quizCount
+
+        //Binding btn listener and navigating to QuizFragment
+        binding.btnQuizRestart.setOnClickListener { view?.findNavController()?.navigate(EndQuizFragmentDirections.actionEndQuizFragmentToQuizFragment()) }
 
         return binding.root
     }
